@@ -1,0 +1,12 @@
+[submodule "third-party/libtomcrypt"]
+	path = third-party/libtomcrypt
+	url = git@github.com:libtom/libtomcrypt.git
+[submodule "third-party/zlib"]
+	path = third-party/zlib
+	url = git@github.com:madler/zlib.git
+[submodule "third-party/minhook"]
+	path = third-party/minhook
+	url = git@github.com:TsudaKageyu/minhook.git
+[submodule "third-party/spdlog"]
+	path = third-party/spdlog
+	url = git@github.com:gabime/spdlog.git
