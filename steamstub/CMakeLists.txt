@@ -5,6 +5,12 @@ add_library(
   stub.cpp
 )
 
+target_link_libraries(
+  T6BaseSteamStub
+  PRIVATE
+  spdlog
+)
+
 set_target_properties(
   T6BaseSteamStub
   PROPERTIES
