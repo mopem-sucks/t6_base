@@ -21,7 +21,7 @@ void t6_base_init_logger(spdlog::level::level_enum level) {
   }
 }
 
-void t6_base_logger_uninit() { spdlog::drop_all(); }
+void t6_base_uninit_logger() { spdlog::drop_all(); }
 
 BOOL WINAPI DllMain(HINSTANCE instance_handle, DWORD reason, LPVOID _reserved) {
   switch (reason) {
@@ -31,7 +31,7 @@ BOOL WINAPI DllMain(HINSTANCE instance_handle, DWORD reason, LPVOID _reserved) {
     break;
   case DLL_PROCESS_DETACH:
     spdlog::debug("DllMain_Process_Detach");
-    t6_base_logger_uninit();
+    t6_base_uninit_logger();
     break;
   }
   return TRUE;
