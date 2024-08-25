@@ -7,15 +7,20 @@
 #include <WinReg/WinReg.hpp>
 
 class SteamRegistry {
-  static constexpr const char *STEAM_REG_KEY_PATH = "SOFTWARE\\WOW6432Node\\Valve\\Steam";
+  static constexpr const char *STEAM_REG_KEY_PATH =
+      "SOFTWARE\\WOW6432Node\\Valve\\Steam";
   static constexpr const char *STEAM_INSTALL_PATH_KEY = "InstallPath";
 
 public:
-  SteamRegistry() : steam_reg_key{HKEY_LOCAL_MACHINE, converter.from_bytes(STEAM_REG_KEY_PATH)} {}
+  SteamRegistry()
+      : steam_reg_key{HKEY_LOCAL_MACHINE,
+                      converter.from_bytes(STEAM_REG_KEY_PATH)} {}
 
   std::string get_steam_install_path() {
-    const auto steam_install_path_key = converter.from_bytes(STEAM_INSTALL_PATH_KEY);
-    return converter.to_bytes(steam_reg_key.GetStringValue(steam_install_path_key));
+    const auto steam_install_path_key =
+        converter.from_bytes(STEAM_INSTALL_PATH_KEY);
+    return converter.to_bytes(
+        steam_reg_key.GetStringValue(steam_install_path_key));
   }
 
 private:
